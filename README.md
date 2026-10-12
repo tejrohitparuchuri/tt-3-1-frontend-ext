@@ -1,6 +1,13 @@
 # TeamPulse - Frontend Client
 
-Frontend client for **TeamPulse**, built entirely with pure **Vanilla JavaScript, HTML5, and CSS3** (no external framework dependencies). Communicates with the Spring Boot backend via REST APIs and WebSockets.
+Frontend client for **TeamPulse**, built entirely with pure **Vanilla JavaScript, HTML5, and CSS3** (zero runtime framework overhead). Communicates directly with the Spring Boot backend via REST APIs.
+
+---
+
+## 🔗 Related Repositories
+
+- **Main Full-Stack Repository:** [tejrohitparuchuri/TeamPulse](https://github.com/tejrohitparuchuri/TeamPulse)
+- **Backend Service Repository:** [tejrohitparuchuri/tt-3-1-backend-ext](https://github.com/tejrohitparuchuri/tt-3-1-backend-ext)
 
 ---
 
@@ -12,28 +19,29 @@ Frontend client for **TeamPulse**, built entirely with pure **Vanilla JavaScript
 └── frontend/
     ├── index.html        # Landing page & navigation
     ├── login.html        # User login (supports username or email)
-    ├── register.html     # User registration form
-    ├── dashboard.html    # User workspaces & analytics dashboard
-    └── workspace.html    # Real-time channels, messaging, and sentiment analysis
+    ├── register.html     # User registration with live username check
+    ├── dashboard.html    # User workspaces & management dashboard
+    └── workspace.html    # Channels, messaging, and live engagement rankings
 ```
 
 ---
 
 ## 🛠️ Features
 - **Pure Vanilla JS:** Lightweight, zero bundle overhead, runs natively in any modern browser.
-- **Responsive Modern UI:** Dark mode styling with fluid layouts and animations.
-- **REST & Real-Time:** Integrates with the TeamPulse Spring Boot backend on port `3333`.
+- **Responsive Dark Mode UI:** Modern sleek styling with micro-animations and intuitive navigation.
+- **Direct REST Integration:** Directly connects to the TeamPulse Spring Boot backend on port `3333`.
 - **Pages:**
+  - `index.html`: Product overview and landing page.
   - `login.html`: Authenticates users with username or email.
-  - `register.html`: Validates inputs and creates new accounts.
-  - `dashboard.html`: Displays team workspaces, stats, and rankings.
-  - `workspace.html`: Real-time chat channels, messages, and sentiment analysis.
+  - `register.html`: Real-time username verification and account registration.
+  - `dashboard.html`: Workspaces list, join workspace via code, and create new workspace.
+  - `workspace.html`: Real-time messaging, unsent draft auto-saving, channels, and member leaderboard.
 
 ---
 
 ## 🚀 Running Locally
 
-To avoid CORS and browser file-origin restrictions, serve the `frontend` folder using any local HTTP static server:
+Serve the `frontend/` directory using any local static HTTP server:
 
 ### Option 1: Python HTTP Server (Recommended)
 ```bash
@@ -43,7 +51,7 @@ python -m http.server 5500
 Open [http://localhost:5500/login.html](http://localhost:5500/login.html) in your browser.
 
 ### Option 2: VS Code Live Server
-1. Open the `frontend` folder in VS Code.
+1. Open the `frontend/` folder in VS Code.
 2. Click **Go Live** on the bottom status bar.
 
 ### Option 3: Node.js `serve` / `http-server`
@@ -53,5 +61,5 @@ npx serve frontend -p 5500
 
 ---
 
-## ⚙️ Backend Connection - Open [Backend Repo Link](https://github.com/tejrohitparuchuri/tt-3-1-backend-ext)
-The frontend expects the Spring Boot backend running at `http://localhost:3333`. Ensure CORS is enabled on the backend server.
+## ⚙️ Backend Connection
+The frontend communicates directly with the Spring Boot backend running at `http://localhost:3333`. Ensure the backend server is running and MySQL is active.
