@@ -53,5 +53,5 @@ npx serve frontend -p 5500
 
 ---
 
-## ⚙️ Backend Connection
+## ⚙️ Backend Connection - Open [Backend Repo Link](https://github.com/tejrohitparuchuri/tt-3-1-backend-ext)
 The frontend expects the Spring Boot backend running at `http://localhost:3333`. Ensure CORS is enabled on the backend server.
